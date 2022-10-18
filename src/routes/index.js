@@ -22,7 +22,7 @@ router.get('/pokemons', async (req, res) => {
                 e => e.name.toLowerCase().includes(name.toLowerCase())) // usamos includes porque getAllPokemons retorna un array con objetos, yo quiero hacerle un filter a la variable donde tengo dicho array (pokemonsTotal) y quedarme solo con el objeto cuyo nombre coincida con el filter.
            pokemonName.length ?
            res.status(200).send(pokemonName) : 
-           res.status(200).send('No se encuentra el personaje con dicho nombre')
+           res.status(200).send(['No se encuentra el personaje con dicho nombre'])
         }
         else {
          //   let baseDeDatos = await getDbInfo()
